@@ -50,11 +50,11 @@ ve_restricoes(E):-
     ver_quadrantes(E).
   
   
-  ver_linhas(e(Nafect,[v(p(X,Y), D, V)|R])):-
+  ver_linhas(e(_,[v(p(X,Y), D, V)|R])):-
     findall(V1,member(v(p(X,_),_,V1),R),L),
      todos_diff([V|L]).
     
-  ver_colunas(e(Nafect,[v(p(X,Y), D, V)|R])):-
+  ver_colunas(e(_,[v(p(X,Y), D, V)|R])):-
     findall(V1,member(v(p(_,Y),_,V1),R),L),
     todos_diff([V|L]).
   
