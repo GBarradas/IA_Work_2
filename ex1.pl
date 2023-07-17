@@ -20,18 +20,6 @@ colunas([3,6,9]).
 diagonais([1,5,9]).
 diagonais([3,5,7]).
 
-/*
-ve_restricoes( e([], [v(p(1),[1,2,3,4,5,6,7,8,9],1),
-                v(p(2),[1,2,3,4,5,6,7,8,9],2),
-                v(p(3),[1,2,3,4,5,6,7,8,9],3),
-                v(p(4),[1,2,3,4,5,6,7,8,9],4),
-                v(p(5),[1,2,3,4,5,6,7,8,9],5),
-                v(p(6),[1,2,3,4,5,6,7,8,9],6),
-                v(p(7),[1,2,3,4,5,6,7,8,9],7),
-                v(p(8),[1,2,3,4,5,6,7,8,9],8),
-                v(p(9),[1,2,3,4,5,6,7,8,9],9)
-    ])).
-*/
 igual(X,X).
 
 doSoma(_,[],0).
@@ -52,13 +40,12 @@ escreve([v(_,_,V)|T]):- write(V),write(' | '),escreve(T).
 
 
 
-b:- estado_inicial(E0), back(E0,A),sort(A, L),write(' '),escreve(L).
+p:- estado_inicial(E0), back(E0,A),sort(A, L),write(' '),escreve(L).
 
 back(e([],A),A).
 back(E,Sol):- sucessor(E,E1), ve_restricoes(E1),
                           back(E1,Sol).
 
-sucessor(e([v(N,D,V)|R],E),e(R,[v(N,D,V)|E])):- member(V,D).
 
 :- dynamic(nos/1).
 
